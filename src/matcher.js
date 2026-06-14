@@ -1,13 +1,11 @@
-import { pipeline, env } from "@xenova/transformers";
-
-env.localModelPath = "./models/";
+import { pipeline } from "@xenova/transformers";
 
 export class FAQMatcher {
   constructor(faqs) {
     this.faqs = faqs;
     this.embedder = null;
     this.faqEmbeddings = [];
-    this.SIMILARITY_THRESHOLD = 0.55;
+    this.SIMILARITY_THRESHOLD = 0.5;
   }
 
   async initialize() {
